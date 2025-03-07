@@ -1,21 +1,21 @@
-const express = reuqire('express');
+const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
-const validateRequest = reuqire('_middleware/validate-request');
-const Role = require('_helper/role');
+const validateRequest = require('_middleware/validate-request');
+const Role = require('_helpers/role');
 const userService = require('./user.service');
 
-//routes
+// routes
 
 router.get('/', getAll);
 router.get('/:id', getById);
 router.post('/', createSchema, create);
-router.put('/:id', upateSchema, update);
+router.put('/:id', updateSchema, update);
 router.delete('/:id', _delete);
 
-modeule.exports = router;
+module.exports = router;
 
-//route functions
+// route functions
 
 function getAll(req, res, next) {
     userService.getAll()
@@ -72,6 +72,6 @@ function updateSchema(req, res, next) {
         password: Joi.string().min(6).empty(''),
         confirmPassword: Joi.string().valid(Joi.ref('password')).empty('')
     }).with('password', 'confirmPassword');
+    
     validateRequest(req, next, schema);
 }
-

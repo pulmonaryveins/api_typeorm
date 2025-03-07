@@ -3,7 +3,7 @@
         "host": "localhost",
         "port": 3306,
         "user": "root",
-        "password": "",
+        "password": "Nissan_GTR",
         "database": "node-mysql-crud-api"
     }
 }
