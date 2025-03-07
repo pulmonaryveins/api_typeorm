@@ -1,2 +1,2 @@
-# 3 - Nodejs MySQL - CRUD API Example 2025
+# 3 - Nodejs MySQL - CRUD API
 Vince Bryant Cabunilas
